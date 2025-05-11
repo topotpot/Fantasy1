@@ -1,0 +1,214 @@
+/* notebook.css */
+
+header {
+  display: flex;
+  justify-content: flex-start; /* Рівняє пункти меню вліво */
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(to right, #1e002b, #3a005a);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+header a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: #ff66cc;
+}
+.fantasy-header {
+  width: 100%;
+  padding: 20px 20px;
+  background: linear-gradient(90deg, #3a0a4a, #521f68, #220031);
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  border-bottom: 2px solid #ab30c5;
+  box-shadow: 0 0 20px #8f2bbd;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 40px;
+  animation: glow 3s infinite alternate;
+  white-space: nowrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.nav-links li a {
+  color: #f3eaff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #e89dff;
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffbdfc, 0 0 10px #bd00ff;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #9b4dff, 0 0 20px #7c2bdc, 0 0 30px #ffb3f7;
+  }
+  to {
+    text-shadow: 0 0 15px #ff80df, 0 0 30px #bd00ff, 0 0 40px #ffbdfc;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  background:#2e1a47; /* Текстура пергаменту */
+  background-size: cover;
+  font-family: 'Uncial Antiqua', cursive;
+  color: #3b2f1c;
+  line-height: 1.7;
+}
+
+
+.notebook {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 248, 225, 0.9);
+  border: 2px solid #7a5c3e;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.category {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  border-bottom: 2px dashed #aa8451;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #4e3927;
+  text-shadow: 1px 1px 2px #d4c1a6;
+}
+
+.entry {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid #c4a06e;
+}
+
+.entry-title {
+  font-size: 1.5rem;
+  color: #623f25;
+  margin-bottom: 0.3rem;
+  text-shadow: 1px 1px 1px #fff2d1;
+}
+
+.entry-description {
+  font-size: 1rem;
+  color: #4a3420;
+}
+
+/* Для трохи магічного ефекту */
+.entry:hover {
+  background-color: rgba(255, 244, 200, 0.4);
+  transition: background-color 0.3s ease;
+  border-left-color: #e3b877;
+}
+  .hidden {
+    display: none;
+  }
+  .entry-title {
+  cursor: pointer;
+  background-color: rgba(255, 248, 220, 0.7);
+  padding: 10px;
+  margin: 0;
+  font-family: 'Uncial Antiqua', cursive;
+  transition: background-color 0.3s ease;
+}
+
+.entry-title:hover {
+  background-color: rgba(255, 248, 180, 0.9);
+}
+
+.entry-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 240, 0.4);
+  border-left: 2px solid #a67c52;
+  border-right: 2px solid #a67c52;
+  font-family: 'Uncial Antiqua', cursive;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.entry-content.open {
+  max-height: 500px; /* достатньо для тексту + зображення */
+  padding: 10px;
+}
+
+.entry-content img {
+  max-width: 40%;
+  height: auto;
+  margin-top: 10px;
+  border: 1px solid #6e4b28;
+  border-radius: 6px;
+  /* z-index: -30; */
+}
+.entry-details {
+  display: none;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.entry-details.visible {
+  display: block;
+}
+.entry-content p {
+  max-width: 300px;
+  display: inline-block;
+  padding-left: 30px;
+}

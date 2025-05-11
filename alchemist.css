@@ -1,0 +1,289 @@
+header {
+  display: flex;
+  justify-content: flex-start; /* Рівняє пункти меню вліво */
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(to right, #1e002b, #3a005a);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+header a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: #ff66cc;
+}
+.fantasy-header {
+  width: 100%;
+  padding: 20px 20px;
+  background: linear-gradient(90deg, #3a0a4a, #521f68, #220031);
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  border-bottom: 2px solid #ab30c5;
+  box-shadow: 0 0 20px #8f2bbd;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 40px;
+  animation: glow 3s infinite alternate;
+  white-space: nowrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.nav-links li a {
+  color: #f3eaff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #e89dff;
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffbdfc, 0 0 10px #bd00ff;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #9b4dff, 0 0 20px #7c2bdc, 0 0 30px #ffb3f7;
+  }
+  to {
+    text-shadow: 0 0 15px #ff80df, 0 0 30px #bd00ff, 0 0 40px #ffbdfc;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2e1a47; /* Фентезі-фіолетовий фон */
+  font-family: 'Verdana', sans-serif;
+  overflow: hidden;
+  color: #fff;
+  padding-top: 100px;
+  margin: 0;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* Казанок по центру вгорі */
+#cauldron {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#cauldron.pulse {
+  animation: pulse 0.5s ease infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: translateX(-50%) scale(1);
+  }
+  to {
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+/* Зона інгредієнтів внизу */
+#ingredients {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  z-index: 5;
+}
+
+.ingredient {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: contain;
+}
+
+.ingredient:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px #ffc107;
+}
+
+/* Анімація інгредієнтів у казанок */
+.flying {
+  position: absolute;
+  transition: all 1s ease-in-out;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+}
+
+/* Листок із завданням */
+#order {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 260px;
+  padding-top: 300px;
+  background-color: rgba(255, 255, 200, 0.95);
+  border: 4px solid #d4a33a;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #000;
+  display: none;
+  z-index: 15;
+}
+
+#order.show {
+  display: block;
+}
+
+#order-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Викреслені замовлення */
+.completed {
+  text-decoration: line-through;
+  color: green;
+}
+.cauldron{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  /* position: absolute; */
+  padding-top:100px;
+  cursor: pointer;
+}
+.div_cauldron{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.text_cauldron{
+    /* z-index: 1000; */
+  max-height: 200px;
+  overflow-y: auto;
+word-wrap: break-word;
+white-space: normal;
+overflow-x: hidden;
+}
+#reset-game {
+  background-color: #4b2e2e;
+  color: #f4e2c9;
+  border: 2px solid #ab165b;
+  padding: 10px 20px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  margin: 20px auto;
+  display: block;
+}
+
+#reset-game:hover {
+  background-color: #ab165b;
+  color: #fff;
+  transform: scale(1.05);
+}
+/* Інґредієнт – ефект натискання */
+.ingredient:active {
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+}
+
+/* Стиль казанка */
+.cauldron {
+  width: 300px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Анімація булькання */
+.cauldron.bubbling {
+  animation: bubble 0.6s ease;
+}
+
+@keyframes bubble {
+  0%   { transform: scale(1); filter: brightness(1); }
+  50%  { transform: scale(1.1); filter: brightness(1.4); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+/* Натискання інгредієнта */
+.ingredient {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.ingredient:active {
+  transform: scale(0.9);
+}
+
+/* Список замовлень */
+#order-list li {
+  transition: all 0.5s ease;
+  font-size: 1.2em;
+}
+
+/* Викреслене завдання */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

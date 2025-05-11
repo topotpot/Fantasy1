@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магазин Алхіміка</title>
+  <link rel="stylesheet" href="alchemist.css" />
+</head>
+<body>
+  <header class="fantasy-header">
+    <div class="logo">🔮 Елдріан світ магії</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">🏠 Майстерня</a></li>
+        <li><a href="magic-ball.html">✨ Передбачення</a></li>
+        <li><a href="quests.html">📜 Завдання</a></li>
+        <li><a href="notebook.html">📖 Блокнот мага</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Казанок по центру зверху -->
+  <img id="cauldron" src="images/cauldron.png" alt="Казанок" />
+
+  <!-- Листок із завданням -->
+  <div id="order" class="show">
+    <div id="order-title">Завдання:</div>
+    <ul id="order-list">
+      <!-- JS вставить завдання сюди -->
+    </ul>
+  </div>
+<div class = "div_cauldron">
+  <img src = "img/cauldron-clipart-lg.png" class = "cauldron">
+  <!-- <div class = "text_cauldron"></div> -->
+</div>
+  <!-- Інгредієнти внизу -->
+  <div id="ingredients">
+    <img src="img/ch1.png" class="ingredient" data-name="червоний гриб" />
+    <img src="img/crystal.png" class="ingredient" data-name="синій кристал" />
+    <img src="img/ch2.png" class="ingredient" data-name="зміїне око" />
+    <img src="img/ch3.png" class="ingredient" data-name="еліксир ночі" />
+    <img src="img/ch4.png" class="ingredient" data-name="листя ельфа" />
+    <!-- Додай свої інгредієнти тут -->
+  </div>
+<button id="reset-game">🔄 Почати спочатку</button>
+
+  <script src="chemistry.js"></script>
+</body>
+</html>
